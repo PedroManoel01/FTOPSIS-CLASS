@@ -1,0 +1,38 @@
+{
+  "criteria": ["return", "risk"],
+  "similarity_scores": {
+    "Stock A": { "return": 0.85, "risk": 0.30 },
+    "Stock B": { "return": 0.55, "risk": 0.45 },
+    "Stock C": { "return": 0.40, "risk": 0.60 }
+  },
+  "membership_functions": {
+    "return": {
+      "Low": [0.0, 0.0, 0.4],
+      "Medium": [0.3, 0.5, 0.7],
+      "High": [0.6, 1.0, 1.0]
+    },
+    "risk": {
+      "Low": [0.0, 0.0, 0.3],
+      "Medium": [0.2, 0.5, 0.8],
+      "High": [0.7, 1.0, 1.0]
+    },
+    "class": {
+      "Very Low": [0, 0, 2],
+      "Low": [1, 2.5, 4],
+      "Medium": [3, 5, 7],
+      "High": [6, 7.5, 9],
+      "Very High": [8, 10, 10]
+    }
+  },
+  "fuzzy_rules": [
+    { "if": [["return", "High"], ["risk", "Low"]], "then": "Very High" },
+    { "if": [["return", "Medium"], ["risk", "Low"]], "then": "High" },
+    { "if": [["return", "Low"], ["risk", "Low"]], "then": "Medium" },
+    { "if": [["return", "High"], ["risk", "Medium"]], "then": "High" },
+    { "if": [["return", "Medium"], ["risk", "Medium"]], "then": "Medium" },
+    { "if": [["return", "Low"], ["risk", "Medium"]], "then": "Low" },
+    { "if": [["return", "High"], ["risk", "High"]], "then": "Medium" },
+    { "if": [["return", "Medium"], ["risk", "High"]], "then": "Low" },
+    { "if": [["return", "Low"], ["risk", "High"]], "then": "Very Low" }
+  ]
+}
