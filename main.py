@@ -20,4 +20,4 @@ async def process_json(request: Request):
     return output
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="https://ftopsis-class-eqglhyoep-pedromanoel01s-projects.vercel.app 
+    uvicorn.run("main:app", host="https://ftopsis-class-eqglhyoep-pedromanoel01s-projects.vercel.app ", reload=True) 
