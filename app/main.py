@@ -1,8 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from ftopsis_class import run_ftopsis  # Sua função aqui
+from app.ftopsis_class import run_ftopsis  # Sua função aqui
 import uvicorn
-from mangum import Mangum
 
 app = FastAPI()
 
@@ -25,7 +24,6 @@ async def process_json(request: Request):
 async def root():
     return {"message": "Hello from FastAPI!"}
 
-#if __name__ == "__main__":
-#    uvicorn.run("main:app", host="0.0.0.0 ",port=8000, reload=True) 
+if __name__ == "__main__":
+   uvicorn.run("main:app", host="0.0.0.0 ",port=8000, reload=True) 
 
-handler = Mangum(app)
