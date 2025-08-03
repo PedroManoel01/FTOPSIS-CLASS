@@ -1,8 +1,7 @@
 [phases.setup]
 nixPkgs = [
   "python312",
-  "gcc",
-  "gfortran",
+  "gcc13",
   "openblas",
   "python3Packages.setuptools",
   "python3Packages.distutils-extra",
