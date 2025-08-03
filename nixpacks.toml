@@ -2,6 +2,8 @@
 nixPkgs = [
   "python312",
   "gcc",
+  "gfortran",
+  "openblas",
   "python3Packages.setuptools",
   "python3Packages.distutils-extra",
   "python3Packages.wheel"
@@ -10,9 +12,8 @@ nixPkgs = [
 [phases.install]
 cmds = [
   "python3 -m venv /opt/venv",
-  "source /opt/venv/bin/activate",
   "/opt/venv/bin/pip install --upgrade pip",
-  "/opt/venv/bin/pip install --no-cache-dir -r requirements.txt"
+  "/opt/venv/bin/pip install --no-binary=numpy -r requirements.txt"
 ]
 
 [start]
