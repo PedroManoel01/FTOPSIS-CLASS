@@ -14,7 +14,7 @@ cmds = [
   "python3 -m venv /opt/venv",
   "source /opt/venv/bin/activate",
   "/opt/venv/bin/pip install --upgrade pip",
-  "/opt/venv/bin/pip install --no-binary=numpy -r requirements.txt"
+  "/opt/venv/bin/pip install --no-binary=numpy -r requirements.txt",
   "/opt/venv/bin/pip install --no-cache-dir -r requirements.txt"
 ]
 
