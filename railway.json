@@ -1,17 +1,7 @@
 {
   "build": {
     "env": {
-      "PYTHON_VERSION": "3.12"
-    },
-    "nixpacks": {
-      "phases": {
-        "setup": {
-          "nixPkgs": ["python312", "gcc", "python3Packages.setuptools"]
-        },
-        "install": {
-          "cmds": ["pip install -r requirements.txt"]
-        }
-      }
+      "PYTHON_VERSION": "3.11"
     }
   },
   "deploy": {
